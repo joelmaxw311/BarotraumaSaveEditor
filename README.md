@@ -1,11 +1,17 @@
 # Barotrauma Save Editor
 Modify .save files of the game Barotrauma
 
+On Windows, Barotrauma .save files are located at
+
+    %LOCALAPPDATA%\Daedalic Entertainment GmbH\Barotrauma
+
 # Usage
-    python save_editor.py [[-h] {import,export} save_file_path]
+There are two ways to execute the script: non-interactive or interactive. 
 
 ## Non-Interactive Mode
 Run the tool from the shell, providing parameters as command arguments.
+
+    python save_editor.py [[-h] {import,export} save_file_path]
 
 ### Show command help
     python save_editor.py -h
@@ -23,7 +29,7 @@ Compress modified save data from ./tmp/import/ to a Barotrauma .save file.
     python save_editor.py export "path/to/save/file.save"
 
 ## Interactive mode
-Executing the save_editor.py directly, without providing command-line arguments, will run the tool in interactive mode.
+Executing the save_editor.py directly (i.e. double-clicking save_editor.py in the file browser) without providing command-line arguments will run the tool in interactive mode.
 In interactive mode, the program will prompt the user to enter each parameter.
 
     > ./save_editor.py
