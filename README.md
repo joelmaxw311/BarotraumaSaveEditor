@@ -1,4 +1,4 @@
-# BarotraumaSaveEditor
+# Barotrauma Save Editor
 Modify .save files of the game Barotrauma
 
 # Usage
