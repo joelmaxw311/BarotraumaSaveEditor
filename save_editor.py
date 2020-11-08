@@ -85,7 +85,7 @@ def compress_save(dir_in, save_out):
 # names and contents of files in directory "dir_in".
 # Returns True if the .save is valid, or False if the .save is invalid.
 def validate_save(dir_in, save_out):
-    validated_files : dict = extract_save(EXPORT_SAVE_PATH) # extract files data from .save file
+    validated_files : dict = extract_save(save_out) # extract files data from .save file
     for file_in in os.listdir(dir_in): # for each file in directory "dir_in"
         if not file_in in validated_files: # file name not found in .save archive
             return False # .save file is invalid: missing file
@@ -115,7 +115,7 @@ def export_save(save_file):
     if not os.path.isdir(EXPORT_DIR_PATH):
         os.makedirs(EXPORT_DIR_PATH)
     path_in = IMPORT_DIR_PATH # path of imported files directory
-    path_out = EXPORT_SAVE_PATH # path of temporary .save file to create
+    path_out = EXPORT_DIR_PATH + save_file # path of temporary .save file to create
     compress_save(path_in, path_out) # compress to a temporary .save file
     validate_save(path_in, path_out) # ensure that the created 
     shutil.copyfile(path_out, save_file) # overwrite "save_file"
